@@ -8,6 +8,8 @@
 
 There are several ways of editing your application.
 
+trigger deploy
+
 **Use Lovable**
 
 Simply visit the [Lovable Project](https://lovable.dev/projects/8b39125d-db12-4349-895d-2f953f8ce52b) and start prompting.
