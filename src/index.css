@@ -2,41 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Asian-inspired artistic design system */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Asian palette */
+    --background: 45 15% 95%;
+    --foreground: 0 0% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 45 20% 98%;
+    --card-foreground: 0 0% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 45 20% 98%;
+    --popover-foreground: 0 0% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Ink brush primary */
+    --primary: 0 0% 20%;
+    --primary-foreground: 45 20% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Warm paper secondary */
+    --secondary: 35 25% 85%;
+    --secondary-foreground: 0 0% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted ink wash */
+    --muted: 35 15% 88%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Golden accent */
+    --accent: 45 85% 70%;
+    --accent-foreground: 0 0% 20%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Traditional red */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 45 20% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 20% 80%;
+    --input: 35 20% 80%;
+    --ring: 45 85% 70%;
 
-    --radius: 0.5rem;
+    /* Canvas texture */
+    --canvas: 35 30% 92%;
+    --canvas-shadow: 0 0% 0%;
+
+    /* Mountain colors */
+    --mountain-primary: 210 30% 25%;
+    --mountain-secondary: 210 25% 35%;
+    --mountain-mist: 210 15% 85%;
+
+    /* Water colors */
+    --water-primary: 200 60% 45%;
+    --water-secondary: 200 40% 60%;
+    --water-ripple: 200 80% 85%;
+
+    /* Moon and sky */
+    --moon: 45 80% 88%;
+    --sky-gradient-start: 210 40% 20%;
+    --sky-gradient-end: 45 30% 35%;
+
+    /* Artistic effects */
+    --ink-splash: 0 0% 25%;
+    --gold-leaf: 45 90% 75%;
+    --aged-paper: 35 35% 90%;
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +129,102 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Canvas texture effect */
+  .canvas-texture {
+    background-image: 
+      radial-gradient(circle at 20% 50%, hsl(var(--canvas-shadow) / 0.03) 1px, transparent 1px),
+      radial-gradient(circle at 80% 20%, hsl(var(--canvas-shadow) / 0.02) 1px, transparent 1px),
+      linear-gradient(45deg, transparent 49%, hsl(var(--canvas-shadow) / 0.01) 50%, transparent 51%);
+    background-size: 30px 30px, 25px 25px, 20px 20px;
+  }
+
+  /* 3D layered effect */
+  .layered-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  /* Floating animation */
+  .float-gentle {
+    animation: float-gentle 6s ease-in-out infinite;
+  }
+
+  @keyframes float-gentle {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+  }
+
+  /* Water ripple animation */
+  .water-ripple {
+    animation: water-ripple 4s ease-in-out infinite;
+  }
+
+  @keyframes water-ripple {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+    50% { transform: scale(1.05) rotate(0.5deg); opacity: 0.9; }
+  }
+
+  /* Parallax scroll effect */
+  .parallax-slow {
+    transform: translateZ(-1px) scale(2);
+  }
+
+  .parallax-medium {
+    transform: translateZ(-0.5px) scale(1.5);
+  }
+
+  /* Artistic shadows */
+  .shadow-artistic {
+    box-shadow: 
+      0 4px 20px hsl(var(--canvas-shadow) / 0.1),
+      0 1px 3px hsl(var(--canvas-shadow) / 0.2),
+      inset 0 1px 0 hsl(var(--canvas) / 0.1);
+  }
+
+  /* Polaroid effect */
+  .polaroid {
+    background: hsl(var(--aged-paper));
+    padding: 1rem 1rem 2rem 1rem;
+    transform: rotate(-2deg);
+    box-shadow: 
+      0 4px 15px hsl(var(--canvas-shadow) / 0.15),
+      0 1px 3px hsl(var(--canvas-shadow) / 0.25);
+  }
+
+  .polaroid:nth-child(even) {
+    transform: rotate(2deg);
+  }
+
+  /* Asian brushstroke effect */
+  .brushstroke {
+    position: relative;
+  }
+
+  .brushstroke::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+      transparent 30%, 
+      hsl(var(--ink-splash) / 0.05) 50%, 
+      transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Gradient text effect */
+  .text-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--primary)), 
+      hsl(var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

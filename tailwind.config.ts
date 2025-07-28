@@ -52,6 +52,26 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Asian artistic palette
+				canvas: 'hsl(var(--canvas))',
+				mountain: {
+					primary: 'hsl(var(--mountain-primary))',
+					secondary: 'hsl(var(--mountain-secondary))',
+					mist: 'hsl(var(--mountain-mist))'
+				},
+				water: {
+					primary: 'hsl(var(--water-primary))',
+					secondary: 'hsl(var(--water-secondary))',
+					ripple: 'hsl(var(--water-ripple))'
+				},
+				moon: 'hsl(var(--moon))',
+				sky: {
+					start: 'hsl(var(--sky-gradient-start))',
+					end: 'hsl(var(--sky-gradient-end))'
+				},
+				ink: 'hsl(var(--ink-splash))',
+				gold: 'hsl(var(--gold-leaf))',
+				paper: 'hsl(var(--aged-paper))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
