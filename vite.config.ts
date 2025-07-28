@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
+    base: '/kabuki-visions-dreamscape/', //
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
